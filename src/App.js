@@ -1,19 +1,23 @@
 
 import './App.css';
-let name = "Chirag"
 
 function App() {
   return (
     <>
-    <nav>
-      <li>Home</li>
-      <li>About</li>
-      <li>Contact Us</li>
-    </nav>
-    <h1>Hello {name}</h1>
-    <div className="contianer">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique omnis repudiandae, rerum assumenda tempore dolore ipsum dolorum. Commodi, minus praesentium sit facilis voluptas labore magnam laudantium numquam! Iste vel aliquid officia eligendi inventore perspiciatis?
+    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+  <div className="container-fluid">
+    <a className="navbar-brand" href='/'>Text Utils</a>
+    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon"></span>
+    </button>
+    <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div className="navbar-nav">
+        <a className="nav-link active" aria-current="page" href='/'>Home</a>
+        <a className="nav-link" href='/'>About</a>
+      </div>
     </div>
+  </div>
+</nav>
     </>
   );
 }

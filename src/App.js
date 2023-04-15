@@ -1,24 +1,16 @@
 
 import './App.css';
+import Navbar from './components/Navbar';
+import TextForm from './components/TextForm';
 
 function App() {
   return (
     <>
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
-  <div className="container-fluid">
-    <a className="navbar-brand" href='/'>Text Utils</a>
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
-    </button>
-    <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div className="navbar-nav">
-        <a className="nav-link active" aria-current="page" href='/'>Home</a>
-        <a className="nav-link" href='/'>About</a>
-      </div>
-    </div>
-  </div>
-</nav>
-<Navbar/>
+<Navbar title = "Text Utils2" />
+<div className="container">
+
+<TextForm head="Enter the text to Analyze" />
+</div>
     </>
   );
 }

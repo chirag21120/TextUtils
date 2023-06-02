@@ -9,8 +9,7 @@ nav{
   /* justify-content: center; */
   text-decoration: none;
   list-style: none;
-  background: black;
-  color: white;
+  /* color: white; */
 }
  nav li{
   padding: 10px;

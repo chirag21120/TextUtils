@@ -54,6 +54,8 @@ export default function TextForm(props) {
             className="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
+            style={{backgroundColor: props.mode==='dark'?'#212530':'white',
+                    color: props.mode==='dark'?'white':'black'}}
           />
           <div id="emailHelp" className="form-text">
             We'll never share your email with anyone else.
@@ -70,6 +72,8 @@ export default function TextForm(props) {
             value={text}
             placeholder="Enter Your text here"
             onChange={handleOnChange}
+            style={{backgroundColor: props.mode==='dark'?'#212530':'white',
+                    color: props.mode==='dark'?'white':'black'}}
           ></textarea>
         </div>
         <div className="mb-3 form-check">

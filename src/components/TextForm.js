@@ -11,11 +11,13 @@ export default function TextForm(props) {
     // console.log("Upper Case Was Clicked");
     let newText = text.toUpperCase();
     setText(newText);
+    props.showAlert("Converted to UpperCase!", "success");
   }
   const handleLowClick = (e)=>{
     e.preventDefault();
     let newText = text.toLowerCase();
     setText(newText);
+    props.showAlert("Converted to LowerCase!", "success");
   }
 
   const speak = (e)=>{
@@ -29,17 +31,20 @@ export default function TextForm(props) {
     e.preventDefault();
    let newText = '';
    setText(newText);
+   props.showAlert("Text Cleared!", "success");
   }
 
   const handleCopy = (e)=>{
     e.preventDefault();
     navigator.clipboard.writeText(text);
+    props.showAlert("Copied to Clipboard!", "success");
   }
 
   const handleSpaces = (e)=>{
     e.preventDefault();
     let newText = text.split(/[ ]+/);
     setText(newText.join(" "));
+    props.showAlert("Extra Spaces Removed!", "success");
   }
   return (
     <>
@@ -73,7 +78,8 @@ export default function TextForm(props) {
             placeholder="Enter Your text here"
             onChange={handleOnChange}
             style={{backgroundColor: props.mode==='dark'?'#212530':'white',
-                    color: props.mode==='dark'?'white':'black'}}
+                    color: props.mode==='dark'?'white':'black'
+                  }}
           ></textarea>
         </div>
         <div className="mb-3 form-check">
@@ -86,22 +92,22 @@ export default function TextForm(props) {
             Check me out
           </label>
         </div>
-        <button  className="btn btn-primary mx-2" onClick={handleUpClick}>
+        <button  className="btn btn-primary mx-2 my-2" onClick={handleUpClick}>
           UpperCase
         </button>
-        <button  className="btn btn-primary mx-2" onClick={handleLowClick}>
+        <button  className="btn btn-primary mx-2 my-2" onClick={handleLowClick}>
           LowerCase
         </button>
-        <button  className="btn btn-primary mx-2" onClick={speak}>
+        <button  className="btn btn-primary mx-2 my-2" onClick={speak}>
           Speak
         </button>
-        <button  className="btn btn-primary mx-2" onClick={handleCopy}>
+        <button  className="btn btn-primary mx-2 my-2" onClick={handleCopy}>
           Copy Text
         </button>
-        <button  className="btn btn-primary mx-2" onClick={handleSpaces}>
+        <button  className="btn btn-primary mx-2 my-2" onClick={handleSpaces}>
           Remove Extra Spaces
         </button>
-        <button  className="btn btn-primary mx-2" onClick={clear}>
+        <button  className="btn btn-primary mx-2 my-2" onClick={clear}>
           Clear
         </button>
       </form>

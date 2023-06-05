@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 export default function Navbar(props) {
   
   return (
@@ -9,9 +9,9 @@ export default function Navbar(props) {
       data-bs-theme={`${props.mode}`}
     >
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/">
+        <a className="navbar-brand" href="#">
           {props.title}
-        </Link>
+        </a>
         <button
           className="navbar-toggler"
           type="button"
@@ -25,12 +25,15 @@ export default function Navbar(props) {
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav">
-            <Link className="nav-link active" aria-current="page" to="/">
+            {/* <Link className="nav-link active" aria-current="page" to="/">
               Home
-            </Link>
-            <Link className="nav-link" to="/about">
+            </Link> */}
+            <a className="nav-link active" aria-current="page" href="#">
+              Home
+            </a>
+            {/* <Link className="nav-link" to="/about">
               {props.aboutText}
-            </Link>
+            </Link> */}
           </div>
         </div>
         <div className="form-check form-switch">

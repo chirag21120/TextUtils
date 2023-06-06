@@ -1,11 +1,11 @@
 import { useState } from "react";
 import "./App.css";
-// import About from "./components/About";
+import About from "./components/About";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import Alert from "./components/Alert";
 
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -20,7 +20,21 @@ function App() {
       setAlert(null);
     }, 1500);
   };
-  const toggleMode = () => {
+  const removebg = ()=>{
+    document.body.classList.remove('bg-light');
+    document.body.classList.remove('bg-dark');
+    document.body.classList.remove('bg-danger');
+    document.body.classList.remove('bg-warning');
+    document.body.classList.remove('bg-success');
+    document.body.classList.remove('bg-primary');
+  }
+  const toggleMode = (cls) => {
+    if(cls !=='mode'){
+    removebg();
+    console.log(cls);
+    document.body.classList.add('bg-'+cls);
+  }
+  else{
     if (mode === "light") {
       setMode("dark");
       document.body.style.backgroundColor = "#212535";
@@ -32,15 +46,16 @@ function App() {
       document.body.style.color = "black";
       showAlert("Light mode enabled", "success");
     }
+  }
   };
   return (
-    // <BrowserRouter>
+    <BrowserRouter>
     <>
       <Navbar title="Text Utils2" mode={mode} toggleMode={toggleMode} />
       <div className="container">
         <Alert alert={alert} />
-        {/* <Routes> */}
-          {/* <Route
+        <Routes>
+          <Route
             exact path="/"
             element={
               <TextForm
@@ -49,16 +64,16 @@ function App() {
                 mode={mode}
               />
             }
-          /> */}
-            <TextForm
+          />
+            {/* <TextForm
                 showAlert={showAlert}
                 head="Enter the text to Analyze"
-                mode={mode}/>
-          {/* <Route exact path="/about" element={<About mode = {mode} />} /> */}
-        {/* </Routes> */}
+                mode={mode}/> */}
+          <Route exact path="/about" element={<About mode = {mode} />} />
+        </Routes>
       </div>
       </>
-    // </BrowserRouter>
+     </BrowserRouter>
   );
 }
 

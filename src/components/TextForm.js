@@ -92,29 +92,29 @@ export default function TextForm(props) {
             Check me out
           </label>
         </div>
-        <button  className="btn btn-primary mx-2 my-2" onClick={handleUpClick}>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={handleUpClick}>
           UpperCase
         </button>
-        <button  className="btn btn-primary mx-2 my-2" onClick={handleLowClick}>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={handleLowClick}>
           LowerCase
         </button>
-        <button  className="btn btn-primary mx-2 my-2" onClick={speak}>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={speak}>
           Speak
         </button>
-        <button  className="btn btn-primary mx-2 my-2" onClick={handleCopy}>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={handleCopy}>
           Copy Text
         </button>
-        <button  className="btn btn-primary mx-2 my-2" onClick={handleSpaces}>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={handleSpaces}>
           Remove Extra Spaces
         </button>
-        <button  className="btn btn-primary mx-2 my-2" onClick={clear}>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={clear}>
           Clear
         </button>
       </form>
     </div>
     <div className="container my-3">
       <h3>Your Text summary</h3>
-      <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} words, {text.length} charachters</p>
+      <p>{text.split(/\s+/).filter((element)=>{return element.length!==0}).length} words, {text.length} charachters</p>
     </div>
     </>
   );
